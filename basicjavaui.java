@@ -55,6 +55,7 @@ public final class BasicJavaUI
 		myLogin.setLayout(new BoxLayout(myLogin, BoxLayout.Y_AXIS));
 		myMenuBar.add(myMenu);
 		myMenu.add(myMenuItem);
+		setupAbout();
 		myFrame.setJMenuBar(myMenuBar);
 		login();
 		myFrame.setVisible(true);
@@ -146,4 +147,17 @@ public final class BasicJavaUI
 			this.email = email;
 		}
 	}
+
+	private void setupAbout() {
+    	myMenuItem.addActionListener(new ActionListener() {
+    		public void actionPerformed(final ActionEvent theEvent) {
+    			JOptionPane.showMessageDialog(myFrame, "We are "
+    					+ "team Light Olive Green\nTravis Bain \"Tora\"\n"
+    					+ "Brendan Kim \"Blubberflub\"\nMalini Naidu \"MalNaidu\"\n"
+    					+ "Brian Wolk \"Bwolkster\"\n"
+    					+ "Alisher Baimenov \"Aleke\"",
+    					"About", JOptionPane.INFORMATION_MESSAGE);
+    		}
+    	});
+    }
 }
